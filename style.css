@@ -1,0 +1,153 @@
+* {
+  font-family: "Bricolage Grotesque", sans-serif;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  position: relative;
+  width: 350px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+}
+
+.box1, .box2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 80px;
+  position: absolute;
+}
+
+.box1 {
+  background-color: #fbb3d9;
+  border: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.box2 {
+  background-color: #D3FF61;
+  transform: translate(-20px, 15px);
+  z-index: 0;
+  border: 2px solid #000;
+}
+
+.top-image {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: #D3FF61;
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  border: 0px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.top-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  margin-top: 80px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+input[type="text"] {
+  padding: 10px 15px;
+  border: 2px solid #000;
+  border-radius: 15px;
+  font-size: 16px;
+  box-shadow: 0 4px 0 #000;
+  color: #000;
+  outline: none;
+  flex: 1;
+}
+
+input::placeholder {
+  color: #000;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #b6dcd1;
+  color: #000;
+  font-size: 16px;
+  border: 2px solid #000;
+  border-radius: 15px;
+  box-shadow: 0 4px 0 #000;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  white-space: nowrap;
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+.task-list {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 380px) {
+  #container {
+    width: 300px;
+    height: 400px;
+  }
+  
+  .box1, .box2 {
+    border-radius: 112px;
+  }
+  
+  .top-image {
+    width: 90px;
+    height: 90px;
+    top: -45px;
+  }
+  
+  h1 {
+    font-size: 28px;
+  }
+}
